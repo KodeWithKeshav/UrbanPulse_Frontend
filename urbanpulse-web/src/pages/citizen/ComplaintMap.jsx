@@ -9,6 +9,7 @@ import 'leaflet/dist/leaflet.css'
 import { HiX, HiArrowRight, HiMap, HiChartBar, HiSparkles } from 'react-icons/hi'
 import { getPriorityTier } from '../../utils/priorityUtils'
 import ExplainAiModal from '../../components/ExplainAiModal'
+import { BASEMAP } from '../../utils/mapTiles'
 
 // Fix default marker icons
 delete L.Icon.Default.prototype._getIconUrl
@@ -17,19 +18,6 @@ L.Icon.Default.mergeOptions({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 })
-
-const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || 'AIzaSyBqn-8BPXpdcIAnjaEN9iwNC47epZP6Q6w'
-
-const MAP_LAYERS = {
-  google: {
-    url: `https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&key=${GOOGLE_MAPS_API_KEY}`,
-    attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
-  },
-  osm: {
-    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }
-}
 
 const STATUS_COLORS = {
   pending: '#B45309', // amber-700
@@ -241,8 +229,10 @@ export default function ComplaintMap() {
                 style={{ height: '100%', width: '100%' }}
               >
                 <TileLayer
-                  attribution={MAP_LAYERS.google.attribution}
-                  url={MAP_LAYERS.google.url}
+                  attribution={BASEMAP.attribution}
+                  url={BASEMAP.url}
+                  subdomains={BASEMAP.subdomains}
+                  maxZoom={BASEMAP.maxZoom}
                 />
 
                 <MapClickHandler onMapClick={handleMapClick} />

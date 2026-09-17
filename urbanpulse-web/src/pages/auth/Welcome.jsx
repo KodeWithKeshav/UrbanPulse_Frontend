@@ -6,7 +6,7 @@ import {
 
 const features = [
   { icon: HiSparkles, title: 'AI-POWERED VALIDATION', desc: 'Machine learning verifies civic issues with Roboflow image analysis before submission.' },
-  { icon: HiLocationMarker, title: 'LOCATION PRIORITY', desc: 'Google Places API ranks complaints by proximity to critical civic infrastructure.' },
+  { icon: HiLocationMarker, title: 'LOCATION PRIORITY', desc: 'OpenStreetMap data ranks complaints by proximity to critical civic infrastructure.' },
   { icon: HiGlobeAlt, title: 'MULTILINGUAL SUPPORT', desc: 'Submit voice complaints in Hindi, Tamil, Telugu and 7+ Indian languages via Sarvam AI.' },
   { icon: HiChartBar, title: 'TRANSPARENCY METRICS', desc: 'Live dashboards show resolution rates, category trends, and government responsiveness.' },
   { icon: HiThumbUp, title: 'COMMUNITY VOTING', desc: 'Citizens upvote complaints to push critical issues to the admin priority queue.' },
