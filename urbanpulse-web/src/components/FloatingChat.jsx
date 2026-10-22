@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useChatContext } from '../../context/ChatContext'
+import { useChatContext } from '../context/ChatContext'
 import {
   HiX, HiPaperAirplane, HiChatAlt2, HiChevronDown,
   HiSparkles, HiExternalLink, HiTrash,
